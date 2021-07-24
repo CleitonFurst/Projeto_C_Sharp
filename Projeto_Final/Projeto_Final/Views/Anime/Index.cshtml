@@ -1,0 +1,56 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model List<Anime>
+
+<h2>Lista de Animes</h2>
+
+@*<table class="table">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(Model => Model.First().Id)</th>
+                <th>@Html.DisplayNameFor(Model => Model.First().Nome)</th>
+                <th>@Html.DisplayNameFor(Model => Model.First().Sinopse)</th>
+                <th>@Html.DisplayNameFor(Model => Model.First().Episodio)</th>
+                <th>@Html.DisplayNameFor(Model => Model.First().Temporada)</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+
+            @foreach (Anime anime in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(Model => anime.Id) </td>
+                        <td>@Html.DisplayFor(Model => anime.Nome) </td>
+                        <td>@Html.DisplayFor(Model => anime.Sinopse) </td>
+                        <td>@Html.DisplayFor(Model => anime.Episodio) </td>
+                        <td>@Html.DisplayFor(Model => anime.Temporada) </td>
+
+                    </tr>
+                }
+        </tbody>
+    </table>
+*@
+<div class="card" style="width: 50rem;">
+    @foreach (Anime anime in Model){
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">@Html.DisplayFor(Model => anime.Nome)</h5>
+        <p class="card-text">@Html.DisplayFor(Model => anime.Sinopse)</p>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">@Html.DisplayFor(Model => anime.Episodio)</li>
+        <li class="list-group-item">@Html.DisplayFor(Model => anime.Temporada)</li>
+        <li class="list-group-item">A third item</li>
+    </ul>
+    <div class="card-body">
+        <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
+    </div>
+    }
+</div>
