@@ -1,0 +1,10 @@
+﻿@model Episodio
+    <div class="flex-lg-wrap">
+        <div class="alert alert-warning form-group" role="alert">
+            Deseja realmente excluir o anime @Html.DisplayFor(Model => Model.Nome);
+        </div>
+        <div class="align-items-center">
+            <a class="btn btn-success"  asp-action="Delete" asp-route-Id="@Model.Id">Sim</a>
+            <a class="btn btn-success" asp-controller="Episodio" asp-action="Index">Não</a>
+        </div>
+    </div>

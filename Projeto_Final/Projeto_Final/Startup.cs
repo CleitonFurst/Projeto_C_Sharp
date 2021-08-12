@@ -1,9 +1,12 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Projeto_Final.Data;
+using Projeto_Final.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +27,16 @@ namespace Projeto_Final
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContext<AnimeContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Anime"))
+                );
+
+            services.AddTransient<IAnimeService, AnimeSqlService>();
+            services.AddTransient<IEpisodioService, EpisodioSqlService>();
+            services.AddTransient<AnimeSqlService>();
+            services.AddTransient<AnimeStaticService>();
+            services.AddTransient<AnimeServiceFull>();
+            services.AddTransient<EpisodioSqlService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

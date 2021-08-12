@@ -1,0 +1,48 @@
+﻿@model Episodio
+<h4>
+    Atualizar o paciente
+</h4>
+
+<div class="row">
+    <form class="col-md-4" asp-action="Update">
+        <div class="form-group">
+            <label asp-for="Nome" class="control-label"></label>
+            <input asp-for="Nome" class="form-control" />
+            <span class="text-danger" asp-validation-for="Nome"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Imagem do episódio</label>
+            <input asp-for="link_img" class="form-control" />
+            <span class="text-danger" asp-validation-for="link_img"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Link do Epiódio</label>
+            <input asp-for="link" class="form-control" />
+            <span class="text-danger" asp-validation-for="link"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Número do episódio</label>
+            <input asp-for="NumeroEpisodio" class="form-control" />
+            <span class="text-danger" asp-validation-for="NumeroEpisodio"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Temporada" class="control-label"></label>
+            <input asp-for="Temporada" class="form-control" />
+            <span class="text-danger" asp-validation-for="Temporada"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Anime</label>
+            <select asp-for="animeId" class="form-control" asp-items="ViewBag.listaDeAnimes">
+                <option value="">-- Selecione --</option>
+
+            </select>
+
+            <span class="text-danger" asp-validation-for="animeId"></span>
+
+        </div>
+        <div class="form-group">
+            <input class="btn alert-info" type="submit" value="Atualizar!" />
+            <a class="btn btn-info" asp-controller="Anime" asp-action="Index">Voltar</a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,25 @@
+﻿@model Episodio
+
+<div class="card">
+    <div class="card-header">
+        @Html.DisplayFor(Model => Model.Nome)
+
+    </div>
+    <div class="card-body"style="border: 5px; background-color:black; ">
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe  class="embed-responsive-item" src="@Html.DisplayFor(Model => Model.link)" allowfullscreen></iframe>
+        </div>
+        <!--<div class="container">
+        <div class="row">
+            <div class="col-6 col-sm-2"> <h5 class="card-title">@Html.DisplayFor(Model => Model.Temporada) Temporadas</h5></div>
+            <div class="col-6 col-sm-2"> <p class="card-text">@Html.DisplayFor(Model => Model.NumeroEpisodio) Episódios</p></div>
+        </div>
+    </div>-->
+        <!--<p class="card-text">@Html.DisplayFor(Model => Model.anime.Sinopse)</p>-->
+        <!-- <a class="btn btn-success" asp-controller="Episodio" asp-action="Index">Voltar</a>-->
+    </div>
+    
+</div>
+
+
+

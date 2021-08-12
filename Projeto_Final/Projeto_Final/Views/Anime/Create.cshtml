@@ -1,0 +1,30 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model Anime
+
+
+<div class="row">
+    <form class="col-md-4" asp-action="Create">
+        <div class="form-group">
+            <label asp-for="Nome" class="control-label"></label>
+            <input asp-for="Nome" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Sinopse" class="control-label"></label>
+            <input asp-for="Sinopse" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Episodio" class="control-label"></label>
+            <input asp-for="Episodio" class="form-control" />
+        </div>
+        <div class="form-group">
+            <input class="btn btn-success" type="submit" value="Criar!" />
+            <a class="btn btn-info" asp-controller="Anime" asp-action="Index">Voltar!</a>
+        </div>
+    </form>
+</div>
+

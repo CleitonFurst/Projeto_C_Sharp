@@ -1,0 +1,75 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model List<Episodio>
+
+<h2>Lista de Animes</h2>
+<div style="height:3rem; ">
+    <a class="btn btn-success" asp-controller="Episodio" asp-area="" asp-action="Create">Criar um novo episódio</a>
+
+</div>
+
+
+<!-- <form class="row" style="height:3rem; ">
+    <div class="col col-md-4">
+         <input type="text" class="form-control" name="busca" placeholder="Buscar..." />
+     </div>
+     <div>
+     <select name="service" class="form-control">
+         <option value="sql" selected>Dados Sql</option>
+         <option value="static" select>Dados Estáticos</option>
+         <option value="all" select>Todos os Dados</option>
+     </select>
+     </div>
+    <div class="col col-md-2">
+        <button type="submit" class="btn btn-info">Buscar!</button>
+    </div>
+</form>-->
+<!--<div style="height:3rem; ">
+    @if (ViewBag.ordenar == true)
+    {
+        <a href="Index" class="btn btn-info">Remover Ordenação</a>
+
+    }
+    else
+    {
+        <a href="/Anime/Index?ordenar=true" class="btn btn-info">Ordenar</a>
+    }
+</div>-->
+<!--<div class="container overflow-hidden  ">-->
+<!--<div class="container ">-->
+<div class="row">
+    @foreach (Episodio episodio in Model)
+    {
+            <div class=" card  container flex-lg-shrink-1  " style=" margin-bottom:2rem;  width: 23rem; align-items: center; ">
+
+                <img src="@Html.DisplayFor(Model => episodio.link_img)" class="card-img-top" alt="Img episodio" style="width:300px ; height:200px ; margin-top:20px;">
+                <div class="card-body">
+                    <h5 class="card-title">@Html.DisplayFor(Model => episodio.Nome)</h5>
+
+                </div>
+        
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <br />
+                       
+                        <ld>
+                            <a asp-controller="Episodio" asp-action="Read" asp-route-id="@episodio.Id">Assistir</a> |
+                            <a asp-controller="Episodio" asp-action="Update" asp-route-id="@episodio.Id">Atualizar</a> |
+                            <a asp-controller="Episodio" asp-action="Delete" asp-route-id="@episodio.Id">Deletar</a>
+                        </ld>
+                        
+                    </li>
+                </ul>
+            </div>
+    }
+
+</div>
+
+
+
+
+
